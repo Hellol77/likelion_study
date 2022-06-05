@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+          나만의 BOO 만들기
+        </title>
+    </head>
+    <body>
+        <p>현재 브라질 BOO : {{count}}</p>
+
+        {% for i in country %}  
+        {% if i.country == '브라질' %}
+        {% for j in image %}  
+        {% if i.nickname == j.nickname %}
+            <img class="image" src="{{ j.image.url }}"/>
+            <p>{{j.nickname}}</p>
+        {% endif %} 
+        {% endfor %}
+        {% endif %} 
+        {% endfor %}
+    </body>
+</html>

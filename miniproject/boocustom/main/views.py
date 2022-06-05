@@ -6,6 +6,7 @@ import random, base64, os
 from django.http import JsonResponse
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
+from .models import Image, Country
 
 def home(request):
     return render(request, 'main/index.html')
@@ -14,6 +15,7 @@ def home(request):
 def select_boo(request):
     return render(request, 'main/select_boo.html')
 
+#@login_message_required
 def select_country(request):
     if request.method == 'POST':
         form = CountryWriteForm(request.POST)
@@ -58,8 +60,12 @@ def select_country(request):
             return render(request, 'main/decorate_boo.html')
     return render(request, 'main/select_country.html')
 
+#@login_message_required
 def decorate_boo(request):
     return render(request, 'main/decorate_boo.html')
+
+def worldmap(request):
+    return render(request, 'main/worldmap.html')
 
 @csrf_exempt
 def canvasToImage(request):
@@ -86,3 +92,39 @@ def canvasToImage(request):
   # filename을 json형식에 맞추어 response를 보내준다.
     answer = {'filename': filename}
     return JsonResponse(answer)
+
+def brazil_boo(request):
+    country = Country.objects.all()
+    image = Image.objects.all()
+    count = Country.objects.filter(country = '브라질').count()
+    return render(request, 'main/Brazil_BOO.html', {'image':image, 'country':country, 'count':count})
+
+def japan_boo(request):
+    country = Country.objects.all()
+    image = Image.objects.all()
+    count = Country.objects.filter(country = '일본').count()
+    return render(request, 'main/Japan_BOO.html', {'image':image, 'country':country, 'count':count})
+
+def china_boo(request):
+    country = Country.objects.all()
+    image = Image.objects.all()
+    count = Country.objects.filter(country = '중국').count()
+    return render(request, 'main/China_BOO.html', {'image':image, 'country':country, 'count':count})
+
+def india_boo(request):
+    country = Country.objects.all()
+    image = Image.objects.all()
+    count = Country.objects.filter(country = '인도').count()
+    return render(request, 'main/India_BOO.html', {'image':image, 'country':country, 'count':count})
+
+def indonesia_boo(request):
+    country = Country.objects.all()
+    image = Image.objects.all()
+    count = Country.objects.filter(country = '인도네시아').count()
+    return render(request, 'main/Indonesia_BOO.html', {'image':image, 'country':country, 'count':count})
+
+def spain_boo(request):
+    country = Country.objects.all()
+    image = Image.objects.all()
+    count = Country.objects.filter(country = '스페인').count()
+    return render(request, 'main/Spain_BOO.html', {'image':image, 'country':country, 'count':count})

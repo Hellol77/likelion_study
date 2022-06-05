@@ -9,10 +9,12 @@ img.src = temp[1];
 ctx.clearRect(0, 0, 1000, 1000);
 img.onload = function(){
   ctx.drawImage(img, 50, 50);
+
 }
 
 const width = innerWidth - 60;
 const height = innerHeight;// - 170;
+
 
 canvas.style.margin = "20px";
 canvas.style.border = "3px double";

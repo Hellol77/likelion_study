@@ -8,7 +8,7 @@
 
   <body>
     <div class="main--div">
-      <img src="./images/한국외국어대학교.jpg" alt="한국외국어대학교" />
+      <img src="./images/BOO_index.png" alt="BOO" class="main--div__img" />
     </div>
     <div class="main--div">
       <img
@@ -17,26 +17,29 @@
       />
     </div>
     <div class="main--div main--form">
-      <form name="nickname-form">
+      <form name="nickname-form" action="./select_boo.html">
         <div class="wrapper">
           <div class="input-data">
             <input type="text" required />
-            <div class="underline" onclick=""></div>
+            <div class="underline"></div>
             <label>Nickname</label>
           </div>
         </div>
-        <div
-          class="btn btn-1"
-          onclick="document.forms['nickname-form'].submit();moveURL();"
-        >
-          GO
+        <div class="wrapper">
+          <div class="input-data">
+            <input type="password" required />
+            <div class="underline"></div>
+            <label>Password</label>
+          </div>
+        </div>
+        <div class="main--div__input">
+          <input
+            type="submit"
+            value="GO"
+            class="btn btn-1"
+          />
         </div>
       </form>
     </div>
   </body>
-  <script>
-    function moveURL() {
-      location.href = "./select_boo.html";
-    }
-  </script>
 </html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+          나만의 BOO 만들기
+        </title>
+    </head>
+    <body>
+        {% for i in country %}  
+        {% if i.country == '인도' %}
+        {% for j in image %}  
+        {% if i.nickname == j.nickname %}
+            <p>{{j.nickname}}</p>
+            <img class="image" src="{{ j.image.url }}"/>
+        {% endif %} 
+        {% endfor %}
+        {% endif %} 
+        {% endfor %}
+    </body>
+</html>
