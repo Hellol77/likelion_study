@@ -1,5 +1,6 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext("2d");
+const range = document.getElementById("jsRange");
 
 let temp = location.href.split("?");
 
@@ -42,7 +43,13 @@ function onMouseMove(event) {
     ctx.stroke();
   }
 }
-
+function handleRangeChange(event){
+    const size = event.target.value;
+    ctx.lineWidth = size;
+}
+if(range){
+    range.addEventListener("input",handleRangeChange);
+}
 if (canvas) {
   canvas.addEventListener("mousemove", onMouseMove);
   canvas.addEventListener("mousedown", startPainting);
@@ -50,7 +57,7 @@ if (canvas) {
   canvas.addEventListener("mouseleave", stopPainting);
 }
 
-document.querySelector("#palette").style.marginLeft = "20px";
+//document.querySelector("#palette").style.marginLeft = "20px";
 const buttons = [
   "red",
   "orange",
@@ -82,9 +89,9 @@ button.style.cursor = 'pointer';
     "1px 0 black, 0 1px black, 1px 0 black, 0 -1px gray";
   button.style.lineHeight = "40px";
   button.style.textAlign = "center";
-  button.style.width = "50px";
-  button.style.height = "50px";
-  button.style.borderRadius = "25px";
+  button.style.width = "40px";
+  button.style.height = "40px";
+  button.style.borderRadius = "30px";
   button.style.border = "4px solid rgba(129, 101, 101, 0.151)";
   button.style.boxShadow = "1px 2px 2px gray";
   button.style.marginBottom = "10px";
@@ -95,11 +102,15 @@ button.style.cursor = 'pointer';
   };
 });
 
+
+
 document.querySelector(".clear").onclick = () => {
   ctx.clearRect(0, 0, width, height);
+  ctx.drawImage(img, 50, 50);
 };
 
 document.querySelector(".fill").onclick = () => {
   ctx.fillStyle = lineColor;
   ctx.fillRect(0, 0, width, height);
+  ctx.drawImage(img, 50, 50);
 };
