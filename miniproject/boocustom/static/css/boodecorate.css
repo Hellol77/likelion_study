@@ -4,6 +4,23 @@
   --main-color: rgb(0, 3, 84);
   --background-color: #f7f6f2;
 }
+@font-face {
+  font-family: "EliceDigitalBaeum_Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+.logo {
+  position: fixed;
+  top: 400px;
+  right: 300px;
+}
+@media all and (max-width: 1424px) {
+  .logo {
+    display: none;
+  }
+}
 
 body {
   margin: 0;
@@ -14,64 +31,27 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-@font-face {
-  font-family: "EliceDigitalBaeum_Bold";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Bold.woff2")
-    format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
 .main-title {
-  margin-top: 2rem;
-  justify-content: center;
+  margin-top: 5rem;
+  text-align: center;
   font-family: var(--main-font);
   font-size: var(--main-font-size);
-  color: var(--main-color);
 }
-.main-img {
-  margin-top: 3rem;
-}
-.main-select {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.main-select-group1 {
-  display: flex;
-  flex-direction: row;
-}
-.main-select-group2 {
-  display: flex;
-  flex-direction: row;
-}
-
-.container {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.globe {
-  width: 650px;
-  height: 650px;
-  cursor: grab;
-}
-
-.globe--dragging {
-  cursor: grabbing;
+.main-subtitle {
+  text-align: center;
+  font-family: var(--main-font);
+  font-size: 2rem;
+  margin-bottom: 3rem;
 }
 .btn {
   text-decoration: none;
   font-size: 1.25rem;
-  margin: 10px;
+  margin: 4rem;
   font-family: var(--main-font);
   position: relative;
   padding: 20px 30px;
   text-align: center;
-  width: 100px;
+  width: 28rem;
 }
 
 .btn-1 {
@@ -92,9 +72,9 @@ body {
   background-color: #ff3cac;
   background-image: linear-gradient(
     225deg,
-    var(--main-color) 0%,
-    var(--main-color) 50%,
-    var(--main-color) 100%
+    #000354 0%,
+    #000354 50%,
+    #000354 100%
   );
   z-index: -1;
   transition: transform 0.5s ease;
@@ -104,3 +84,18 @@ body {
   transform: translate(0, -6px);
   box-shadow: 10px -10px 25px 0 #c0c0c0, -10px 10px 25px 0 #c0c0c0;
 }
+
+#introImg {
+  border: 2px solid #000354;
+  border-radius: 15px;
+}
+
+/* color:black;
+
+    background-color: silver;
+    text-align: center;
+    border: 3px solid black; 
+    /* 버튼 테두리 */
+/* border-radius: 8px;
+    padding: 10px 50px;  */
+/*padding으로 버튼 크게 (세로 가로) */
