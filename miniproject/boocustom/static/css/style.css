@@ -11,6 +11,9 @@
   font-weight: 700;
   font-style: normal;
 }
+body {
+  overflow: hidden;
+}
 div {
   display: flex;
   align-items: center;

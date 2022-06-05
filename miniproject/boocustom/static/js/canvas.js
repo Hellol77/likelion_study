@@ -9,7 +9,7 @@ img.src = temp[1];
 
 ctx.clearRect(0, 0, 1000, 1000);
 img.onload = function(){
-  ctx.drawImage(img, 50, 50);
+  ctx.drawImage(img, 0, 0);
 
 }
 
