@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,15 +9,37 @@
         </title>
     </head>
     <body>
+        
+        <p>현재 인도 BOO : {{count}}</p>
+
         {% for i in country %}  
         {% if i.country == '인도' %}
         {% for j in image %}  
         {% if i.nickname == j.nickname %}
-            <p>{{j.nickname}}</p>
             <img class="image" src="{{ j.image.url }}"/>
+            <p>{{j.nickname}}</p>
         {% endif %} 
         {% endfor %}
         {% endif %} 
         {% endfor %}
+
+        <div class="main--div">
+            <div class="btn btn-1" onclick="moveURL1();">시작하기</div>
+        </div>
+
+        <div class="main--div">
+          <div class="btn btn-1" onclick="moveURL2();">시작하기</div>
+        </div>
+
+        <script>
+            function moveURL1() {
+              location.href = "./worldmap";
+            }
+        </script>
+        <script>
+          function moveURL2() {
+            location.href = "";
+          }
+        </script>
     </body>
 </html>
