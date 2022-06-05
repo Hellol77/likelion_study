@@ -6,79 +6,128 @@ div{
     /* default: row */
     justify-content: center;
   }
+
+.Boo{
+  width: 300px;
+  height: 300px;
+}
+.Country{
+  border: solid 1px;
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+}
+.canvas{
+  border: solid 1px;
+}
+
+.draw {
+  color: #000543;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+* {
+  background-color: rgb(218, 218, 211);
+}
+
+.selectCountry {
+  color: #000543;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.select {
+  margin: 20px;
+  color: #000543;
+  font-size: 30px;
+  font-weight: bold;
+
+}
+
+.Boo {
+  border: 5px ridge skyblue;
+  border-radius: 40px;
+  margin: 4px;
   
-  .Boo{
-    width: 300px;
-    height: 300px;
-  }
-  .Country{
-    border: solid 1px;
-    width: 300px;
-    height: 200px;
-    margin: 10px;
-  }
-  .canvas{
-    border: solid 1px;
-  }
-  
-  .draw {
-    color: #000543;
-    font-size: 30px;
-    font-weight: bold;
-  }
-  
-  * {
-    background-color: rgb(218, 218, 211);
-  }
-  
-  .selectCountry {
-    color: #000543;
-    font-size: 40px;
-    font-weight: bold;
-  }
-  
-  .select {
-    margin: 20px;
-    color: #000543;
-    font-size: 30px;
-    font-weight: bold;
-  
-  }
-  
-  .Boo {
-    border: 5px ridge skyblue;
-    border-radius: 40px;
-    margin: 4px;
-    
-  }
-  
-  .one:hover img {
-    transform: scale(1.4);
-    transition: transform .5s;
-  }
-  
-  .two:hover:hover img {
-    transform: scale(1.4);
-    transition: transform .5s;
-  }
-  
-  .three:hover img {
-    transform: scale(1.4);
-    transition: transform .5s;
-  }
-  
-  .four:hover img {
-    transform: scale(1.4);
-    transition: transform .5s;
-  }
-  
-  .five:hover img {
-    transform: scale(1.4);
-    transition: transform .5s;
-  }
-  
-  .six:hover img {
-    transform: scale(1.4);
-    transition: transform .5s;
-  }
-  
+}
+
+.one:hover img {
+  transform: scale(1.4);
+  transition: transform .5s;
+}
+
+.two:hover:hover img {
+  transform: scale(1.4);
+  transition: transform .5s;
+}
+
+.three:hover img {
+  transform: scale(1.4);
+  transition: transform .5s;
+}
+
+.four:hover img {
+  transform: scale(1.4);
+  transition: transform .5s;
+}
+
+.five:hover img {
+  transform: scale(1.4);
+  transition: transform .5s;
+}
+
+.six:hover img {
+  transform: scale(1.4);
+  transition: transform .5s;
+}
+
+#fairy {
+  position: absolute;
+  top: 20px;
+  right: 200px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+#fairy div {
+  position: relative;
+  display: inline-block;
+}
+
+span {
+  display: flex;
+  cursor: pointer;
+}
+
+.arrow_box {
+  display: none;
+  position: absolute;
+  background: #a6d9dd;
+  width: 100px;
+  padding: 6px;
+  left: 0;
+  border-radius: 8px;
+  background: #333;
+  color: #fff;
+  font-size: 14px;
+}
+
+.arrow_box:after {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -10px;
+  border: solid transparent;
+  border-color: rgba(51, 51, 51, 0);
+  border-bottom-color: #333;
+  border-width: 10px;
+  pointer-events: none;
+  content: ' ';
+}
+
+span:hover+p.arrow_box {
+  display: block;
+}
