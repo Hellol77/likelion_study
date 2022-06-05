@@ -21,3 +21,65 @@ div{
 .canvas{
   border: solid 2px;
 }
+
+
+.draw {
+  color: #000543;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+* {
+  background-color: rgb(247, 246, 242);
+}
+
+.selectCountry {
+  color: #000543;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.select {
+  margin: 20px;
+  color: #000543;
+  font-size: 30px;
+  font-weight: bold;
+
+}
+
+.Boo {
+  border: 5px ridge skyblue;
+  border-radius: 40px;
+  margin: 4px;
+  
+}
+
+.one:hover img {
+  transform: scale(1.4);
+  transition: transform .5s;
+}
+
+.two:hover:hover img {
+  transform: scale(1.4);
+  transition: transform .5s;
+}
+
+.three:hover img {
+  transform: scale(1.4);
+  transition: transform .5s;
+}
+
+.four:hover img {
+  transform: scale(1.4);
+  transition: transform .5s;
+}
+
+.five:hover img {
+  transform: scale(1.4);
+  transition: transform .5s;
+}
+
+.six:hover img {
+  transform: scale(1.4);
+  transition: transform .5s;
+}

@@ -1,23 +1,89 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="{% static './css/nickname.css' %}" />
+        <title>Global BOO</title>
         <title>
           나만의 BOO 만들기
         </title>
     </head>
-    <body>
-        <p>현재 중국 BOO : {{count}}</p>
+    <body bgcolor="#F7F6F2">
+      <div style="text-align: center;">
+        <img src="{% static './images/china.png' %}" alt="중국 국기" style="display: inline; padding-top: 3rem; padding-left:-30rem; width: 10rem;"/>
+        <p style="font-size: 3rem; display: inline; padding-left: 1.5rem;">China</p>
+        <p style="display: inline; font-size: 1rem; padding-left: 15rem;">현재 '중국'BOO : {{count}}</p>
+        <img src="{% static './images/mainllogp.png' %}" alt="뿌 요정" style="position:absolute; top: 15rem; float:right; width: 8rem;"/>
+      </div>
 
-        {% for i in country %}  
-        {% if i.country == '중국' %}
-        {% for j in image %}  
-        {% if i.nickname == j.nickname %}
-            <img class="image" src="{{ j.image.url }}"/>
-            <p>{{j.nickname}}</p>
-        {% endif %} 
-        {% endfor %}
-        {% endif %} 
-        {% endfor %}
+        <main>
+            <table style="margin-left: auto; margin-right: auto;">
+            <tr>
+              {% for i in country %}  
+              {% if i.country == '중국' %}
+              {% for j in image %}  
+              {% if i.nickname == j.nickname %}
+              
+              {% if forloop.counter <= 4 %}
+                <td>
+                  <div style="text-align: center;">
+                      <img class="image" src="{{ j.image.url }}" style="width: 10rem;"/>
+                      <p>{{j.nickname}}</p>
+                  </div>
+                </td>
+  
+              {% endif %}
+              {% endif %} 
+              {% endfor %}
+              {% endif %} 
+              {% endfor %}
+            </tr>
+            <tr>
+              {% for i in country %}  
+              {% if i.country == '중국' %}
+              {% for j in image %}  
+              {% if i.nickname == j.nickname %}
+              
+              {% if forloop.counter > 4 %}
+              {% if forloop.counter <= 8 %}
+                <td>
+                  <div style="text-align: center;">
+                      <img class="image" src="{{ j.image.url }}" style="width: 10rem;"/>
+                      <p>{{j.nickname}}</p>
+                  </div>
+                </td>
+              {% endif %}
+              {% endif %}
+              {% endif %} 
+              {% endfor %}
+              {% endif %} 
+              {% endfor %}
+            </tr>
+            </table>
+
+        </main>
+
+        <div class="main--div">
+            <div class="btn btn-1" onclick="moveURL1();" style="width: 15rem; height: 1rem; font-size: 1rem; display: flex; align-items:center; justify-content:center">지도보기</div>
+          </div>
+
+          <div class="main--div">
+            <div class="btn btn-1" onclick="moveURL2();" style="width: 15rem; height: 1rem; margin-top: -1rem; font-size: 1rem; display: flex; align-items:center; justify-content:center">처음으로</div>
+          </div>
     </body>
+
+    <script>
+        function moveURL1() {
+          location.href = "./worldmap";
+        }
+    </script>
+    <script>
+      function moveURL2() {
+        location.href = "/";
+      }
+    </script>
 </html>

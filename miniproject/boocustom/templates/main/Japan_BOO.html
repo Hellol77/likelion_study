@@ -13,36 +13,66 @@
         </title>
     </head>
     <body bgcolor="#F7F6F2">
-
-        <img src="{% static './images/japan.png' %}" alt="일본 국기" style="display: inline; padding-top: 3rem; padding-left:5rem"/>
-        <p style="font-size: 8rem; display: inline; padding-left: 2rem;">Japan</p>
-        <p style="display: inline; float: right;">현재 '일본' BOO : {{count}}</p>
+      <div style="text-align: center;">
+        <img src="{% static './images/japan.png' %}" alt="일본 국기" style="display: inline; padding-top: 3rem; padding-left:-30rem; width: 10rem;"/>
+        <p style="font-size: 3rem; display: inline; padding-left: 1.5rem;">Japan</p>
+        <p style="display: inline; font-size: 1rem; padding-left: 15rem;">현재 '일본'BOO : {{count}}</p>
+        <img src="{% static './images/mainllogp.png' %}" alt="뿌 요정" style="position:absolute; top: 15rem; float:right; width: 8rem;"/>
+      </div>
 
         <main>
-            <table>
-            {% for i in country %}  
-            {% if i.country == '일본' %}
-            {% for j in image %}  
-            {% if i.nickname == j.nickname %}
-            <td>
-                <div style="text-align: center;">
-                    <img class="image" src="{{ j.image.url }}" style="width: 20rem;"/>
-                    <p>{{j.nickname}}</p>
-                </div>
-            </td>
-            {% endif %} 
-            {% endfor %}
-            {% endif %} 
-            {% endfor %}
+            <table style="margin-left: auto; margin-right: auto;">
+            <tr>
+              {% for i in country %}  
+              {% if i.country == '일본' %}
+              {% for j in image %}  
+              {% if i.nickname == j.nickname %}
+              
+              {% if forloop.counter <= 4 %}
+                <td>
+                  <div style="text-align: center;">
+                      <img class="image" src="{{ j.image.url }}" style="width: 10rem;"/>
+                      <p>{{j.nickname}}</p>
+                  </div>
+                </td>
+  
+              {% endif %}
+              {% endif %} 
+              {% endfor %}
+              {% endif %} 
+              {% endfor %}
+            </tr>
+            <tr>
+              {% for i in country %}  
+              {% if i.country == '일본' %}
+              {% for j in image %}  
+              {% if i.nickname == j.nickname %}
+              
+              {% if forloop.counter > 4 %}
+              {% if forloop.counter <= 8 %}
+                <td>
+                  <div style="text-align: center;">
+                      <img class="image" src="{{ j.image.url }}" style="width: 10rem;"/>
+                      <p>{{j.nickname}}</p>
+                  </div>
+                </td>
+              {% endif %}
+              {% endif %}
+              {% endif %} 
+              {% endfor %}
+              {% endif %} 
+              {% endfor %}
+            </tr>
             </table>
+
         </main>
 
         <div class="main--div">
-            <div class="btn btn-1" onclick="moveURL1();" style="width: 25rem;">지도보기</div>
+            <div class="btn btn-1" onclick="moveURL1();" style="width: 15rem; height: 1rem; font-size: 1rem; display: flex; align-items:center; justify-content:center">지도보기</div>
           </div>
 
           <div class="main--div">
-            <div class="btn btn-1" onclick="moveURL2();" style="width: 25rem;">처음으로</div>
+            <div class="btn btn-1" onclick="moveURL2();" style="width: 15rem; height: 1rem; margin-top: -1rem; font-size: 1rem; display: flex; align-items:center; justify-content:center">처음으로</div>
           </div>
     </body>
 
