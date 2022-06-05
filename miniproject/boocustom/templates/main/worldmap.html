@@ -1,17 +1,44 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>
-          나만의 BOO 만들기
-        </title>
-    </head>
-    <body>
-        <a href="./brazil_boo">브라질</a><br>
-        <a href="./spain_boo">스페인</a><br>
-        <a href="./japan_boo">일본</a><br>
-        <a href="./india_boo">인도</a><br>
-        <a href="./indonesia_boo">인도네시아</a><br>
-        <a href="./china_boo">중국</a><br>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{% static './css/worldmap.css' %}" />
+    <title>나만의 BOO 만들기</title>
+  </head>
+  <body>
+    <div class="main-title">
+      국가를 선택해주세요
+    </div>
+    <div class="main">
+      <div class="container">
+        <canvas class="globe" width="1800" height="1600"></canvas>
+      </div>
+      <div class="main-select">
+        <div class="main-select-group1">
+          <div class="btn btn-1" onclick="location.href='./brazil_boo'">
+            브라질
+          </div>
+          <div class="btn btn-1" onclick="location.href='./spain_boo'">
+            스페인
+          </div>
+          <div class="btn btn-1" onclick="location.href='./japen_boo'">
+            일본
+          </div>
+        </div>
+        <div class="main-select-group2">
+          <div class="btn btn-1" onclick="location.href='./india_boo'">
+            인도
+          </div>
+          <div class="btn btn-1" onclick="location.href='./indonesia_boo'">
+            인도네시아
+          </div>
+          <div class="btn btn-1" onclick="location.href='./china_boo'">
+            중국
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="{% static './js/worldmap.js' %}"></script>
 </html>
