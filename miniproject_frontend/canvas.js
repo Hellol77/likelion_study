@@ -95,9 +95,11 @@ button.style.cursor = 'pointer';
 
 document.querySelector(".clear").onclick = () => {
   ctx.clearRect(0, 0, width, height);
+  ctx.drawImage(img, 50, 50);
 };
 
 document.querySelector(".fill").onclick = () => {
   ctx.fillStyle = lineColor;
   ctx.fillRect(0, 0, width, height);
+  ctx.drawImage(img, 50, 50);
 };
