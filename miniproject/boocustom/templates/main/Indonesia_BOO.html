@@ -13,7 +13,7 @@
         {% if i.country == '인도네시아' %}
         {% for j in image %}  
         {% if i.nickname == j.nickname %}
-            <img class="image" src="{{ j.image.url }}"/>
+            <img class="image" src="{{ j.image.url }}" width="800px" style="color: blue;"/>
             <p>{{j.nickname}}</p>
         {% endif %} 
         {% endfor %}
