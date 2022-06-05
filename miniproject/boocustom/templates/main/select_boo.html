@@ -10,19 +10,31 @@
 </head>
 
 <body>
-  <div>Boo 고르기</div>
+  <div class="select">Boo를 골라주세요</div>
   <div>
-    <img class="Boo" src="{% static './images/Boo_inkyung.png' %}">
-    <img class="Boo" src="{% static './images/Boo_minsol.png' %}">
-    <img class="Boo" src="{% static './images/Boo_woojin.png' %}">
+    <div class="one">
+      <img class="Boo" src="{% static './images/Boo_inkyung.png' %}">
+    </div>
+    <div  class="two">
+      <img class="Boo" src="{% static './images/Boo_minsol.png' %}">
+    </div>
+    <div class="three">
+      <img class="Boo" src="{% static './images/Boo_woojin.png' %}">
+    </div>
+  </div>
     
   </div>
-  <div>
-    
-    <img class="Boo" src="{% static './images/Boo_donghyun.png' %}">
-    <img class="Boo" src="{% static './images/Boo_soobin.png' %}">
-    <img class="Boo" src="{% static './images/Boo_hwichawn.png' %}">
-  </div>
+    <div>
+      <div class="four">
+        <img class="Boo" src="{% static './images/Boo_donghyun.png' %}">
+      </div>
+      <div  class="five">
+        <img class="Boo" src="{% static './images/Boo_soobin.png' %}">
+      </div>
+      <div class="six">
+        <img class="Boo" src="{% static './images/Boo_hwichawn.png' %}">
+      </div>
+    </div>
 
   <script type="text/javascript" src="{% static './js/float_boo.js' %}"></script>
 </body>
