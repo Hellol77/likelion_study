@@ -12,18 +12,19 @@
     />
   </head>
 
-  <body>
+  <body >
     <div class="main--div">
       <img
         class="main-logo"
         src="{% static './images/mainllogp.png' %}"
         alt="logo"
+        style="margin-top: 8rem;"
       />
     </div>
-    <div class="main--div">
+    <div class="main--div" style="margin-top: -2rem;">
       <div class="main-title">나만의 부를 꾸며보세요</div>
     </div>
-    <div class="main--div main--form">
+    <div class="main--div main--form" style="margin-top: -10rem;">
       <form action="" method="POST" name="nickname-form">
         {% csrf_token %}
         <div class="wrapper">
