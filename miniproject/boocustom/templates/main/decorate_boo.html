@@ -10,17 +10,14 @@
   <link rel="stylesheet" type="text/css" href="{% static './css/style.css' %}">
 </head>
 
-<body>
+<body style="background-color: #F7F6F2;">
   <div class="select">
     옷을 그려주세요
   </div>
-  <div>
-    
+  <div style="margin-top: -2rem;">
       <canvas id="canvas" class="canvas" width="500" height="500" style="color: rgb(255, 255, 255);"></canvas>
-    
-
   </div>
-  <div class="controls_range" style="padding-top: 50px;">
+  <div class="controls_range" style="padding-top: -2rem;">
     <input type="range" id="jsRange" min="0.1" max="15.0" value="3.5" step="0.1" />
   </div>
   <div id="palette">
@@ -38,8 +35,8 @@
     <span class="clear">clear</span>
     <span class="fill">fill</span>
   </div>
-  <div>
-      <div class="btn btn-1" id="save">스샷!</div>ㅊ
+  <div style="margin-top: -1rem;">
+      <div class="btn btn-1" id="save" style="width: 10rem;">스샷!</div>
   </div>
   <script type="text/javascript" src="{% static './js/canvas.js' %}"></script>
   <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>

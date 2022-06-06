@@ -55,8 +55,8 @@ body {
 }
 
 .globe {
-  width: 650px;
-  height: 650px;
+  width: 500px;
+  height: 500px;
   cursor: grab;
 }
 
