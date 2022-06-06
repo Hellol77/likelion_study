@@ -17,4 +17,5 @@ urlpatterns = [
     path('india_boo', views.india_boo, name='india_boo'),
     path('indonesia_boo', views.indonesia_boo, name='indonesia_boo'),
     path('spain_boo', views.spain_boo, name='spain_boo'),
+    path('boodecorate',views.boodecorate, name='boodecorate')
 ]

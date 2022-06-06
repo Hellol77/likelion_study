@@ -128,3 +128,7 @@ def spain_boo(request):
     image = Image.objects.all()
     count = Country.objects.filter(country = '스페인').count()
     return render(request, 'main/Spain_BOO.html', {'image':image, 'country':country, 'count':count})
+
+
+def boodecorate(request):
+    return render(request, 'main/boodecorate.html')

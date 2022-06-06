@@ -1,30 +1,39 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
     <title>부 꾸미기</title>
-    <link rel="stylesheet" type="text/css" href="./boodecorate.css" />
+    <link rel="stylesheet" type="text/css" href="{% static './css/boodecorate.css' %}" />
   </head>
 
   <body onload="showImage()">
-    <div class="main-title">부 꾸미기</div>
-    <div class="main-subtitle">이렇게 꾸며주세요</div>
-    <div><img id="introImg" border="0" /></div>
-    <div><img class="logo" src="./mainllogp.png" alt="logo" /></div>
+    <div class="main-title" style="margin-top: 1rem; font-size: 4rem; color: rgb(0, 3, 84);">부 꾸미기</div>
+    <div class="main-subtitle" style="margin-top: -0.3rem; font-size: 2rem; color: rgb(0, 3, 84)">이렇게 꾸며주세요</div>
+    <div><img id="introImg" border="0"  style="margin-top: -2rem"/></div>
     <!-- <button onclick = "location.href='index.html'">시작하기</button> -->
-    <div class="btn btn-1">시작하기</div>
+    <div class="btn btn-1" style="margin-top: 1rem;" onclick="moveURL();">시작하기</div>
+    <div id="fairy">
+      <div style="padding-right: 12rem;">
+        <span><img class="fairy_boo" src="{% static './images/mainllogp.png' %}"></span>
+        <p class="arrow_box">안녕! 나는<br> 설명 요정 뿌야</p>
+      </div>
   </body>
   <script>
     var imgArray = new Array();
-    imgArray[0] = "china.jpg";
-    imgArray[1] = "india.jpg";
-    imgArray[2] = "indonesia1.jpg";
-    imgArray[3] = "spain.jpg";
-    imgArray[4] = "japan.jpg";
+    imgArray[0] = "{% static './images/china.jpg' %}";
+    imgArray[1] = "{% static './images/india.jpg' %}";
+    imgArray[2] = "{% static './images/indonesia1.png' %}";
+    imgArray[3] = "{% static './images/spain1.jpg' %}";
+    imgArray[4] = "{% static './images/japan.jpg' %}";
     function showImage() {
       var imgNum = Math.round(Math.random() * 4);
       var objImg = document.getElementById("introImg");
       objImg.src = imgArray[imgNum];
+    }
+
+    function moveURL() {
+      location.href = "./select_boo";
     }
   </script>
 </html>

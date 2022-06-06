@@ -15,6 +15,6 @@ def signup(request):
             user = User.objects.create_user(user_id=request.POST['username'], password= str(random.randrange(10000000, 99999999)))
             # 로그인 한다
             auth.login(request, user)
-            return redirect('./select_boo')
+            return redirect('./boodecorate')
     # signup으로 GET 요청이 왔을 때, 회원가입 화면을 띄워준다.
     return render(request, 'main/nickname.html')
