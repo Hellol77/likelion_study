@@ -11,6 +11,11 @@
       type="text/css"
       href="{% static './css/nickname.css' %}"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static './css/popup.css' %}"
+    />
     <title>Global BOO</title>
   </head>
   <body bgcolor="#F7F6F2">
@@ -19,7 +24,7 @@
         class="main-logo"
         src="{% static './images/mainllogp.png' %}"
         alt="한국외국어대학교"
-        style="margin-top: 8rem;"
+        style="margin-top: 8rem"
       />
     </div>
     <div class="main--div">
@@ -34,9 +39,48 @@
         alt="나만의 부를 꾸며보세요"
       />
     </div>
-    <div class="main--div" >
-      <div class="btn btn-1" onclick="moveURL();" style="margin-top: -2rem; display: inline;">시작하기</div>
-      <div class="btn btn-1" onclick="moveURL2();" style="margin-top: -2rem; display: inline;">지도보기</div>
+    <div class="main--div">
+      <div
+        class="btn btn-1"
+        onclick="moveURL();"
+        style="margin-top: -2rem; display: inline"
+      >
+        시작하기
+      </div>
+      <div
+        class="btn btn-1"
+        onclick="moveURL2();"
+        style="margin-top: -2rem; display: inline"
+      >
+        지도보기
+      </div>
+    </div>
+
+    <div class="popup">
+      <div class="popup_wrap">
+        <div class="popup_inner">
+          <div class="popup_layer">
+            <div class="text_area">
+              <div class="popup_text">아직 베타 버전입니다<br> 모바일은 그림을 그릴 수 없어요</div>
+              <img
+                src="{% static './images/popup.png' %}"
+                alt="popup"
+                class="popup_img"
+              />
+            </div>
+            <div class="btn_area">
+              <div
+                type="button"
+                name="button"
+                onclick="popup_close()"
+                class="btn btn-1"
+              >
+                닫기
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
   <script>
@@ -47,11 +91,14 @@
     function moveURL2() {
       location.href = "./worldmap";
     }
-    var http = require("http")
-    setInterval(function(){
+    function popup_close(e) {
+      popup = document.querySelector(".popup");
+      popup.style.display = "none";
+    }
+    var http = require("http");
+    setInterval(function () {
       console.log("every 1 minutes (60000)");
       http.get("https://https://boocustom.herokuapp.com/");
-    }, 60000); 
-
+    }, 60000);
   </script>
 </html>
