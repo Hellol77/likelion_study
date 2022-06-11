@@ -1,48 +1,54 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>
-    나만의 BOO 만들기
-  </title>
-  <link rel="stylesheet" type="text/css" href="{% static './css/style.css' %}">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>나만의 BOO 만들기</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static './css/style.css' %}"
+    />
+  </head>
 
-<body bgcolor=" #F7F6F2">
-  <div class="select">Boo를 골라주세요</div>
-  <div>
-    <div class="one">
-      <img class="Boo" src="{% static './images/Boo_inkyung.png' %}">
-    </div>
-    <div  class="two">
-      <img class="Boo" src="{% static './images/Boo_minsol.png' %}">
-    </div>
-    <div class="three">
-      <img class="Boo" src="{% static './images/Boo_woojin.png' %}">
-    </div>
-  </div>
-    
-  </div>
-    <div>
-      <div class="four">
-        <img class="Boo" src="{% static './images/Boo_donghyun.png' %}">
+  <body bgcolor=" #F7F6F2">
+    <div class="select deco_div">Boo를 골라주세요</div>
+    <div class="deco_div">
+      <div class="one deco_div">
+        <img class="Boo" src="{% static './images/Boo_inkyung.png' %}" />
       </div>
-      <div  class="five">
-        <img class="Boo" src="{% static './images/Boo_soobin.png' %}">
+      <div class="two deco_div">
+        <img class="Boo" src="{% static './images/Boo_minsol.png' %}" />
       </div>
-      <div class="six">
-        <img class="Boo" src="{% static './images/Boo_hwichawn.png' %}">
+      <div class="three deco_div">
+        <img class="Boo" src="{% static './images/Boo_woojin.png' %}" />
       </div>
     </div>
 
-    <div id="fairy">
-      <div>
-        <span><img class="fairy_boo" src="{% static './images/mainllogp.png' %}"></span>
+    <div class="deco_div">
+      <div class="four deco_div">
+        <img class="Boo" src="{% static './images/Boo_donghyun.png' %}" />
+      </div>
+      <div class="five deco_div">
+        <img class="Boo" src="{% static './images/Boo_soobin.png' %}" />
+      </div>
+      <div class="six deco_div">
+        <img class="Boo" src="{% static './images/Boo_hwichawn.png' %}" />
+      </div>
+    </div>
+
+    <div id="fairy" class="deco_div">
+      <div class="deco_div">
+        <span
+          ><img class="fairy_boo" src="{% static './images/mainllogp.png' %}"
+        /></span>
         <p class="arrow_box">마음에 드는 boo를 골라봐!</p>
       </div>
-  </div>
+    </div>
 
-  <script type="text/javascript" src="{% static './js/float_boo.js' %}"></script>
-</body>
+    <script
+      type="text/javascript"
+      src="{% static './js/float_boo.js' %}"
+    ></script>
+  </body>
 </html>
