@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>
+    나만의 BOO 만들기
+  </title>
+  <link rel="stylesheet" type="text/css" href="{% static './css/style.css' %}">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+</head>
+
+<body style="background-color: #F7F6F2;">
+  <div class="select">
+    옷을 그려주세요
+  </div>
+  <div style="margin-top: -2rem; border: double 5px; max-width: 504px; max-height: 504px; margin: auto;">
+      <canvas id="canvas" class="canvas" width="500" height="500" style="background-color: #F7F6F2; color: #F7F6F2;"></canvas>
+  </div>
+  <div class="controls_range" style="padding-top: -2rem;">
+    <input type="range" id="jsRange" min="0.1" max="15.0" value="3.5" step="0.1" />
+  </div>
+  <div id="palette">
+    <span class="red">red</span>
+    <span class="orange">orange</span>
+    <span class="yellow">yellow</span>
+    <span class="green">green</span>
+    <span class="blue">blue</span>
+    <span class="navy">navy</span>
+    <span class="purple">purple</span>
+    <span class="black">black</span>
+    <span class="white">white</span>
+  </div>
+  <div>
+    <span class="clear">clear</span>
+    <span class="fill">fill</span>
+  </div>
+  <div style="margin-top: -1rem;">
+      <div class="btn btn-1" id="save" style="width: 10rem;">스샷!</div>
+  </div>
+
+  <div id="fairy">
+    <div style="padding-right: 15rem;">
+      <span><img class="fairy_boo" src="{% static './images/mainllogp.png' %}"></span>
+      <p class="arrow_box">boo에게 새 옷을 그려줘!!</p>
+    </div>
+</div>
+  <script type="text/javascript" src="{% static './js/canvas.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
+  <script>
+  $(function(){
+    $("#save").click(function() { 
+      html2canvas($('#canvas').get(0)).then( function (canvas) {
+        var data = canvas.toDataURL();
+        //console.log(data)
+        // data:image/png;base64,iVBORw0KGgoAAAANSUhE.....
+        $.ajax({
+        type: 'POST',
+        url: 'saveImage',
+        data: {data:data},
+        success: function(result) {
+          var filename = result['filename'];
+          // document.forms[filename].submit();
+          console.log(filename);
+          location.href = "./worldmap";
+        },
+        error: function(e) { alert("에러발생");}
+      });
+
+      });
+    });
+  });
+  </script>
+</body>
+
+</html>
+
+
+
+

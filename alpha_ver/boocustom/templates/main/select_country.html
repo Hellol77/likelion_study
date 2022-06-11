@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>
+    나만의 BOO 만들기
+  </title>
+  <link rel="stylesheet" type="text/css" href="{% static './css/style.css' %}">
+</head>
+
+<body bgcolor=" #F7F6F2">
+  <div class="select" style="margin-top: 7rem;">나라를 골라주세요</div>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div>
+      <input type="submit" name="send" value = 0 class="Country " style="background-image: url('{% static './images/india.png' %}'); background-repeat:no-repeat; background-size:100% 100%; font-size: 0px;">
+      <input type="submit" name="send" value = 1 class="Country" style="background-image: url('{% static './images/indonesia.png' %}'); background-repeat:no-repeat; background-size:100% 100%; font-size: 0px;">
+      <input type="submit" name="send" value = 2 class="Country" style="background-image: url('{% static './images/japan.png' %}'); background-repeat:no-repeat;background-size:100% 100%; font-size: 0px;">
+
+    </div>
+    <div>
+
+      <input type="submit" name="send" value = 3 class="Country" style="background-image: url('{% static './images/brazil.png' %}'); background-repeat:no-repeat;background-size:100% 100%; font-size: 0px;">
+      <input type="submit" name="send" value = 4 class="Country" style="background-image: url('{% static './images/china.png' %}'); background-repeat:no-repeat;background-size:100% 100%; font-size: 0px;">
+      <input type="submit" name="send" value = 5 class="Country" style="background-image: url('{% static './images/spain.png' %}'); background-repeat:no-repeat;background-size:100% 100%; font-size: 0px;">
+    </div>
+  </form>
+
+  <div id="fairy">
+    <div>
+      <span><img class="fairy_boo" src="{% static './images/mainllogp.png' %}"></span>
+      <p class="arrow_box">나라를 골라봐!</p>
+    </div>
+</div>
+
+  <script type="text/javascript" src="{% static './js/float_country.js' %}"></script>
+</body>
+
+</html>

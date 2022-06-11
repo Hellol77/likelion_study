@@ -1,0 +1,131 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="{% static './css/nickname.css' %}" />
+        <title>Global BOO</title>
+        <title>
+          나만의 BOO 만들기
+        </title>
+
+        <style>
+          @font-face {
+            font-family: "EliceDigitalBaeum_Bold";
+            src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Bold.woff2")
+              format("woff2");
+            font-weight: 700;
+            font-style: normal;
+            color: rgb(0, 3, 84);
+          }
+
+
+            #fairy {
+            position: absolute;
+            top: 15rem;
+            right:5rem;
+            text-align: center;
+            }
+
+            #fairy div {
+            position: relative;
+            display: inline-block;
+            }
+
+            span {
+            display: flex;
+            cursor: pointer;
+            }
+
+            .arrow_box {
+            display: none;
+            position: absolute;
+            background: #a6d9dd;
+            width: 100px;
+            padding: 6px;
+            top: 9rem;
+            left: 2rem;
+            border-radius: 8px;
+            background: #333;
+            color: #fff;
+            font-size: 14px;
+            }
+
+            .arrow_box:after {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            margin-left: -10px;
+            border: solid transparent;
+            border-color: rgba(51, 51, 51, 0);
+            border-bottom-color: #333;
+            border-width: 10px;
+            pointer-events: none;
+            content: ' ';
+            }
+
+            span:hover+p.arrow_box {
+            display: block;
+            }
+          </style>
+        </head>
+    <body bgcolor="#F7F6F2">
+      <div style="text-align: center;">
+        <img src="{% static './images/india.png' %}" alt="인도 국기" style="display: inline; padding-top: 3rem; padding-left:-30rem; width: 10rem;"/>
+        <p style="font-size: 3rem; display: inline; padding-left: 1.5rem; font-family: EliceDigitalBaeum_Bold;">India</p>
+        <p style="display: inline; font-size: 1rem; padding-left: 15rem; font-family: EliceDigitalBaeum_Bold;">현재 '인도'BOO : {{count}}</p>
+      </div>
+
+      <main>
+        <table style="margin-left: auto; margin-right: auto;">
+          {% for n,m in r_dict.items %}
+          <tr>
+            {% for i in image %}
+              {% if forloop.counter > n %}
+              {% if forloop.counter <= m %}
+              <td>
+                <div style="text-align: center;">
+                    <img class="image" src="{{ i.image.url }}" style="width: 10rem;"/>
+                    <p style="font-family: EliceDigitalBaeum_Bold;">{{i.nickname}}</p>
+                </div>
+              </td>
+              {% endif %}
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+          </tr>
+        </table>
+      </main>
+
+        <div class="main--div">
+            <div class="btn btn-1" onclick="moveURL1();" style="width: 15rem; height: 1rem; font-size: 1rem; display: flex; align-items:center; justify-content:center">지도보기</div>
+          </div>
+
+          <div class="main--div">
+            <div class="btn btn-1" onclick="moveURL2();" style="width: 15rem; height: 1rem; margin-top: -1rem; font-size: 1rem; display: flex; align-items:center; justify-content:center">처음으로</div>
+          </div>
+
+          <div id="fairy">
+            <div style="padding-right: 10rem;">
+              <span><img class="fairy_boo" src="{% static './images/mainllogp.png' %}"></span>
+              <p class="arrow_box">다른 사람들이 이쁘게 꾸민<br> 부를 볼수 있어!</p>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        function moveURL1() {
+          location.href = "./worldmap";
+        }
+    </script>
+    <script>
+      function moveURL2() {
+        location.href = "/";
+      }
+    </script>
+</html>

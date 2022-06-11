@@ -1,0 +1,156 @@
+:root {
+  --main-font: "EliceDigitalBaeum_Bold";
+  --main-font-size: 4.4rem;
+  --main-color: rgb(0, 3, 84);
+  --background-color: #f7f6f2;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-color);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@font-face {
+  font-family: "EliceDigitalBaeum_Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+.main-title {
+  margin-top: 2rem;
+  justify-content: center;
+  font-family: var(--main-font);
+  font-size: var(--main-font-size);
+  color: var(--main-color);
+}
+.main-img {
+  margin-top: 3rem;
+}
+.main-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main-select-group1 {
+  display: flex;
+  flex-direction: row;
+}
+.main-select-group2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.globe {
+  width: 500px;
+  height: 500px;
+  cursor: grab;
+}
+
+.globe--dragging {
+  cursor: grabbing;
+}
+.btn {
+  text-decoration: none;
+  font-size: 1.25rem;
+  margin: 10px;
+  font-family: var(--main-font);
+  position: relative;
+  padding: 20px 30px;
+  text-align: center;
+  width: 100px;
+}
+
+.btn-1 {
+  overflow: hidden;
+  color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 0 0 0 rgba(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-1::after {
+  content: "";
+  width: 1200px;
+  height: 1000px;
+  position: absolute;
+  top: -40px;
+  left: -300px;
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    var(--main-color) 0%,
+    var(--main-color) 50%,
+    var(--main-color) 100%
+  );
+  z-index: -1;
+  transition: transform 0.5s ease;
+}
+
+.btn-1:hover {
+  transform: translate(0, -6px);
+  box-shadow: 10px -10px 25px 0 #c0c0c0, -10px 10px 25px 0 #c0c0c0;
+}
+
+#fairy {
+  position: absolute;
+  top: 15rem;
+  right:5rem;
+  text-align: center;
+  }
+  
+  #fairy div {
+  position: relative;
+  display: inline-block;
+  }
+  
+  span {
+  display: flex;
+  cursor: pointer;
+  }
+  
+  .arrow_box {
+  display: none;
+  position: absolute;
+  background: #a6d9dd;
+  width: 100px;
+  padding: 6px;
+  top: 9rem;
+  left: 2rem;
+  border-radius: 8px;
+  background: #333;
+  color: #fff;
+  font-size: 14px;
+  }
+  
+  .arrow_box:after {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -10px;
+  border: solid transparent;
+  border-color: rgba(51, 51, 51, 0);
+  border-bottom-color: #333;
+  border-width: 10px;
+  pointer-events: none;
+  content: ' ';
+  }
+  
+  span:hover+p.arrow_box {
+  display: block;
+  }
